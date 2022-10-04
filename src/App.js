@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { fetchData } from './redux/tablesRedux';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import NavBar from './components/view/NavBar';
+import { Container } from 'react-bootstrap';
+import { Route, Routes } from 'react-router-dom';
+import MainPage from './components/pages/MainPage';
+import SingleTable from './components/features/SingleTable/SingleTable';
+import { useState } from 'react';
+import Loading from './components/features/Loading';
+
 
 function App() {
+  const dispatch = useDispatch();
+  const [pending, setPending] = useState(true);
+  console.log(pending)
+
+  useEffect(() => dispatch(fetchData()), [dispatch]);
+  fetch('http://localhost:3131/api/tables')
+    .then((res) => res.json())
+    .then(() => setPending(false));
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<MainPage/>}/>
+        <Route path='/tables/:tableId' element={<SingleTable/>}/>
+        <Route path='*' element={<MainPage/>}/>
+      </Routes>
+      { pending  && <Loading /> }
+    </Container>
+
   );
 }
 

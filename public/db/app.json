@@ -1,0 +1,49 @@
+{
+  "tables": [
+    {
+      "id": "1",
+      "date": "2022/09/11",
+      "status": "Reserved",
+      "bill": "15",
+      "ppl": "10",
+      "table": 1,
+      "maxPeople": "10"
+    },
+    {
+      "id": "2",
+      "date": "2022/12/12",
+      "status": "Free",
+      "bill": "0",
+      "ppl": "0",
+      "table": 2,
+      "maxPeople": 4
+    },
+    {
+      "id": "3",
+      "date": "2022/10/15",
+      "status": "Free",
+      "bill": "0",
+      "ppl": "0",
+      "table": 3,
+      "maxPeople": "5"
+    },
+    {
+      "id": "4",
+      "table": 4,
+      "date": "2022/09/11",
+      "status": "Free",
+      "ppl": 0,
+      "maxPeople": 4,
+      "bill": 0
+    },
+    {
+      "id": "5",
+      "date": "2022/12/12",
+      "status": "Free",
+      "bill": 0,
+      "ppl": 0,
+      "table": 5,
+      "maxPeople": 4
+    }
+  ]
+}
