@@ -9,6 +9,8 @@ import SingleTable from './components/features/SingleTable/SingleTable';
 import { useState } from 'react';
 import Loading from './components/features/Loading';
 
+import { API_URL } from './config';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +18,7 @@ function App() {
   console.log(pending)
 
   useEffect(() => dispatch(fetchData()), [dispatch]);
-  fetch('http://localhost:3131/api/tables')
+  fetch(API_URL + '/tables')
     .then((res) => res.json())
     .then(() => setPending(false));
   

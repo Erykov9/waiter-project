@@ -3,7 +3,7 @@
     {
       "id": "1",
       "date": "2022/09/11",
-      "status": "Cleaning",
+      "status": "Busy",
       "bill": "15",
       "ppl": "10",
       "table": 1,
@@ -12,7 +12,7 @@
     {
       "id": "2",
       "date": "2022/12/12",
-      "status": "Cleaning",
+      "status": "Reserved",
       "bill": "0",
       "ppl": "0",
       "table": 2,
